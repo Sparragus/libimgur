@@ -49,7 +49,5 @@ class Client:
 	# TODO: Check for error in upload
 
 	# Succesful upload. Return output
-	return output
-	
-	
+	return output	
 	        
