@@ -18,16 +18,18 @@
 import sys
 import getopt
 import libimgur
+import pyperclip
+from xml.dom import minidom
 
 # API Key provided by Alan@imgur.com
 api_key = '02b62fd8f1d5e78321e62bb42ced459e'
     
-# TODO:
 # Copies text to the clipboard
 def copy_to_clipboard(some_string):
-    pass
+    if type(some_string) is not str
+        return
+    pyperclip.setcb(some_string)
 
-# TODO:
 # Function: get_image_link
 #
 # Returns: 
@@ -38,29 +40,16 @@ def copy_to_clipboard(some_string):
 #
 # Return example:
 # 'http://i.imgur.com/hdJ2S.png'
-#
 def get_image_link(imgur_result):
-    pass
+    xml_doc = minidom.parse(imgur_result)
+    original = str(xmldoc.getElementsByTagName('original')[0].toxml())
+    return original[10:-11]
 
-# TODO:
-# Function: vBulletin
-#
 # Returns: vBulletin code for posting in a vBulletin forum.
-#
-# Parameters: 
-# image_original_link, image_large_link = None
-# If no image_large_link is provided, image_large_link uses the default value None.
-#
-# Return example:
-## The [IMG] uses the large size image for preview. 
-## Clicking the image takes you to the original size
-# '[URL=image_original_link] [IMG] image_large_link [/IMG] [/URL]'
-# 
-# If no image_large_link is provided then the preview is enough. No need to link to the same version of the image
-# '[IMG] image_original_link [/IMG]'
-#
-def vBulletin( image_original_link, image_large_link = None ):
-    pass
+def vBulletin( image_original_link, image_large_link = None ): #aonbyte-done?
+    if image_large_link is None
+        return '[IMG]' + image_original_link + '[/IMG]
+    return '[URl=' + image_original_link + '] [IMG]' + image_large_link + '[/IMG][/URL]'
 
 # Prints usage info
 def usage():
