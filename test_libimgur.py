@@ -85,15 +85,13 @@ def main(argv):
     # Upload image(s)
     result = imgur.upload(image)
 
-    # TODO: Parse result to get links
-    # image_link = get_image_link(result)
+    
+    image_link = get_image_link(result)
     
     # Format for vBulletin and copy to clipboard
     if _vBulletin:
-	pass
-	# vBulletin_code = vBulletin(image_link)
-	# copy_to_clipboard(vBulletin_code)
-	# return 1
+	    vBulletin_code = vBulletin(image_link)
+	    copy_to_clipboard(vBulletin_code)
     
     return 1
 
