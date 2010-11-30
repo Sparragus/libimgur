@@ -26,7 +26,7 @@ api_key = '02b62fd8f1d5e78321e62bb42ced459e'
     
 # Copies text to the clipboard
 def copy_to_clipboard(some_string):
-    if type(some_string) is not str
+    if type(some_string) != str:
         return
     pyperclip.setcb(some_string)
 
@@ -47,8 +47,8 @@ def get_image_link(imgur_result):
 
 # Returns: vBulletin code for posting in a vBulletin forum.
 def vBulletin( image_original_link, image_large_link = None ): #aonbyte-done?
-    if image_large_link is None
-        return '[IMG]' + image_original_link + '[/IMG]
+    if image_large_link == None:
+        return '[IMG]' + image_original_link + '[/IMG]'
     return '[URl=' + image_original_link + '] [IMG]' + image_large_link + '[/IMG][/URL]'
 
 # Prints usage info
